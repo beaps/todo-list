@@ -20,3 +20,8 @@ function listTemplate(task) {
     `<li>${task.value}</li>`
   );
 }
+
+function renderList(task) {
+  const $ul = document.querySelector('.list');
+  $ul.innerHTML = listTemplate(task);
+}
