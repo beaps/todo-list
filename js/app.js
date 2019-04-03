@@ -14,3 +14,9 @@ $form.addEventListener('submit', (e) => {
   // Reset text
   $task.value = '';
 });
+
+function listTemplate(task) {
+  return (
+    `<li>${task.value}</li>`
+  );
+}
