@@ -22,7 +22,7 @@ $form.addEventListener('submit', (e) => {
 }*/
 
 function renderList(task) {
-  const $ul = document.querySelector('.list');
+  const $ul = document.querySelector('.list-container');
   //$ul.innerHTML = listTemplate(task);
   //let li = listTemplate(task);
   //$ul.append(li);
