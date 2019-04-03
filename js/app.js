@@ -15,13 +15,20 @@ $form.addEventListener('submit', (e) => {
   $task.value = '';
 });
 
-function listTemplate(task) {
+/*function listTemplate(task) {
   return (
     `<li>${task.value}</li>`
   );
-}
+}*/
 
 function renderList(task) {
   const $ul = document.querySelector('.list');
-  $ul.innerHTML = listTemplate(task);
+  //$ul.innerHTML = listTemplate(task);
+  //let li = listTemplate(task);
+  //$ul.append(li);
+
+  let li = document.createElement('li');
+  li.textContent = task.value;
+  $ul.appendChild(li);
+
 }
