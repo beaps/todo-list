@@ -26,7 +26,8 @@ function generateElementsDOM(task) {
   const $li = document.createElement('li');
   const $label = document.createElement('label');
   const $checkbox = document.createElement('input');
-  const $taskText = document.createElement('p');  
+  const $taskText = document.createElement('p');
+  const $removeButton = document.createElement('button'); 
 
   // Setup checkbox
   $checkbox.setAttribute('type', 'checkbox');
@@ -36,8 +37,13 @@ function generateElementsDOM(task) {
   $taskText.textContent = task.value.trim();
   $label.appendChild($taskText);
 
+  // Setup remove button
+  $removeButton.textContent = 'Borrar';
+
+
   // Setup li
   $li.appendChild($label);
+  $li.appendChild($removeButton);
 
   return $li;
 }
