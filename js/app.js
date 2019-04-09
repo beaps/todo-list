@@ -7,7 +7,7 @@ let $task = document.querySelector('#task');
 $form.addEventListener('submit', (e) => {
   e.preventDefault();
 
-  if ($task.value.length > 0) {
+  if ($task.value.trim().length > 0) {
     //tasks.push($task.value); 
     renderList($task);
   }
@@ -28,7 +28,6 @@ function renderList(task) {
   //$ul.append(li);
 
   let li = document.createElement('li');
-  li.textContent = task.value;
+  li.textContent = task.value.trim();
   $ul.appendChild(li);
-
 }
