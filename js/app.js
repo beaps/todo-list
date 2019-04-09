@@ -31,6 +31,7 @@ function generateElementsDOM(task) {
 
   // Setup checkbox
   $checkbox.setAttribute('type', 'checkbox');
+  $checkbox.addEventListener('click', () => $taskText.classList.toggle('list-item__text--line-through'));
   $label.appendChild($checkbox);
 
   // Setup task text
