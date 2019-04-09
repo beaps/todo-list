@@ -35,6 +35,7 @@ function generateElementsDOM(task) {
 
   // Setup task text
   $taskText.textContent = task.value.trim();
+  $taskText.classList.add('list-item__text');
   $label.appendChild($taskText);
 
   // Setup remove button
