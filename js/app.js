@@ -40,6 +40,7 @@ function generateElementsDOM(task) {
 
   // Setup remove button
   $removeButton.textContent = 'Borrar';
+  $removeButton.addEventListener('click', e => e.target.parentNode.remove());
 
 
   // Setup li
