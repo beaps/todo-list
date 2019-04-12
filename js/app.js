@@ -1,31 +1,25 @@
 const $form = document.querySelector('.form-task'); 
 const $btn = document.querySelector('.btn');
 let $task = document.querySelector('#task');
-//const tasks = [];
 const tasks = getSavedTasks();
 
-/*Object.entries(tasks).forEach(([key, value]) => {
-  renderList(value);  
-});*/
 
-// tasks.forEach(task => {
-//   renderList(task.text); 
-// })
-
-
-renderList(tasks);
-
-  
+tasks.forEach(task => {
+  renderList(task.text); 
+})
 
 
 $form.addEventListener('submit', (e) => {
-  e.preventDefault();
+  // Don't reload the page
+  e.preventDefault(); 
   
   if ($task.value.trim().length > 0) {
+    renderList($task.value.trim());
+
     tasks.push({
       text: $task.value.trim()
-    }); 
-    renderList(tasks);
+    });
+
     saveTasks(tasks);
   }
   // Reset text
@@ -39,7 +33,7 @@ function renderList(task) {
 }
 
 
-function generateElementsDOM(tasks) {
+function generateElementsDOM(task) {
   const $li = document.createElement('li');
   const $label = document.createElement('label');
   const $checkbox = document.createElement('input');
@@ -52,23 +46,13 @@ function generateElementsDOM(tasks) {
   $label.appendChild($checkbox);
 
   // Setup task text
-  //$taskText.textContent = tasks;
-
-  tasks.forEach(task => {
-    $taskText.textContent = task.text;
-  });
-
-  /*Object.entries(tasks).forEach(([key, value]) => {
-    $taskText.textContent = value;
-  });*/
-  
+  $taskText.textContent = task;
   $taskText.classList.add('list-item__text');
   $label.appendChild($taskText);
 
   // Setup remove button
   $removeButton.textContent = 'Borrar';
   $removeButton.addEventListener('click', e => e.target.parentNode.remove());
-
 
   // Setup li
   $li.appendChild($label);
@@ -77,8 +61,9 @@ function generateElementsDOM(tasks) {
   return $li;
 }
 
+
 function saveTasks(tasks) {
-  window.localStorage.setItem('tasks', JSON.stringify(tasks));
+  localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
 function getSavedTasks() {
@@ -89,9 +74,4 @@ function getSavedTasks() {
   } catch (e) {
     return [];
   }
-  // try {
-  //   return tasksJSON ? JSON.parse(tasksJSON) : {};
-  // } catch (e) {
-  //   return {};
-  // }
-};
+}
