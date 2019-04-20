@@ -2,11 +2,9 @@ const $form = document.querySelector('.form-task');
 const $btn = document.querySelector('.btn');
 let $task = document.querySelector('#task');
 const tasks = getSavedTasks();
-let id = 0;
-
 
 tasks.forEach(task => {
-  renderList(task.text); 
+  renderList(task);
 })
 
 
@@ -15,18 +13,24 @@ $form.addEventListener('submit', (e) => {
   e.preventDefault(); 
   
   if ($task.value.trim().length > 0) {
-    renderList($task.value.trim());
-
+    
     tasks.push({
-      id: id++,
       text: $task.value.trim()
     });
 
+    let aTask = task(tasks);
+    
+    renderList(aTask);
     saveTasks(tasks);
   }
   // Reset text
   $task.value = '';
 });
+
+
+function task(tasks) {
+  return tasks[tasks.length - 1];
+}
 
 
 function renderList(task) {
@@ -48,7 +52,7 @@ function generateElementsDOM(task) {
   $label.appendChild($checkbox);
 
   // Setup task text
-  $taskText.textContent = task;
+  $taskText.textContent = task.text;
   $taskText.classList.add('list-item__text');
   $label.appendChild($taskText);
 
@@ -57,6 +61,7 @@ function generateElementsDOM(task) {
   $removeButton.addEventListener('click', e => {
     e.target.parentNode.remove();
     // removeItemFromLocalStorage()
+    removeItemFromLocalStorage(task)
   });
 
   // Setup li
@@ -81,9 +86,9 @@ function getSavedTasks() {
   }
 }
 
-// function removeItemFromLocalStorage() {
-//   console.log(task.id);
+function removeItemFromLocalStorage(task) {
+  let index = tasks.indexOf(task);
+  tasks.splice(index, 1);
   
-//   tasks.splice(task.id, 1);
-//   localStorage.setItem('tasks', JSON.stringify(tasks));
-// }
+  saveTasks(tasks)
+}
