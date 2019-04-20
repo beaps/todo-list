@@ -2,6 +2,7 @@ const $form = document.querySelector('.form-task');
 const $btn = document.querySelector('.btn');
 let $task = document.querySelector('#task');
 const tasks = getSavedTasks();
+let id = 0;
 
 
 tasks.forEach(task => {
@@ -17,6 +18,7 @@ $form.addEventListener('submit', (e) => {
     renderList($task.value.trim());
 
     tasks.push({
+      id: id++,
       text: $task.value.trim()
     });
 
@@ -52,7 +54,10 @@ function generateElementsDOM(task) {
 
   // Setup remove button
   $removeButton.textContent = 'Borrar';
-  $removeButton.addEventListener('click', e => e.target.parentNode.remove());
+  $removeButton.addEventListener('click', e => {
+    e.target.parentNode.remove();
+    // removeItemFromLocalStorage()
+  });
 
   // Setup li
   $li.appendChild($label);
@@ -75,3 +80,10 @@ function getSavedTasks() {
     return [];
   }
 }
+
+// function removeItemFromLocalStorage() {
+//   console.log(task.id);
+  
+//   tasks.splice(task.id, 1);
+//   localStorage.setItem('tasks', JSON.stringify(tasks));
+// }
