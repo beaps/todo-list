@@ -56,7 +56,7 @@ function generateElementsDOM(task) {
     $taskText.classList.toggle('list-item__text--line-through');
 
     if (task.done) {
-      $checkbox.setAttribute('checked', true);
+      $checkbox.setAttribute('checked', 'checked');
     } else {
       $checkbox.removeAttribute('checked');
     }
@@ -67,7 +67,7 @@ function generateElementsDOM(task) {
 
   // If there are already values in the localStorage
   if (task.done) {
-    $checkbox.setAttribute('checked', true);
+    $checkbox.setAttribute('checked', 'checked');
     $taskText.classList.add('list-item__text--line-through');
   } else {
     $checkbox.removeAttribute('checked');
