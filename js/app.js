@@ -31,18 +31,18 @@ $form.addEventListener('submit', (e) => {
 
 
 
-
+// Return the last object of the array 'tasks'
 function task(tasks) {
   return tasks[tasks.length - 1];
 }
 
-
+// Render an individual task
 function renderList(task) {
   const $ul = document.querySelector('.list-container');
   $ul.appendChild(generateElementsDOM(task));
 }
 
-
+// Get the DOM elements for an individual task
 function generateElementsDOM(task) {
   const $li = document.createElement('li');
   const $label = document.createElement('label');
@@ -95,12 +95,12 @@ function generateElementsDOM(task) {
   return $li;
 }
 
-
+// Save tasks to localStorage
 function saveTasks(tasks) {
   localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
-
+// Fetch existing tasks from localStorage
 function getSavedTasks() {
   const tasksJSON = localStorage.getItem('tasks');
 
@@ -111,7 +111,7 @@ function getSavedTasks() {
   }
 }
 
-
+// Remove an individual task
 function removeItemFromLocalStorage(task) {
   let index = tasks.indexOf(task);
   tasks.splice(index, 1);
