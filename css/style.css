@@ -15,6 +15,14 @@ section {
   /* place-items: center center; */
 }
 
+header {
+  background-image: linear-gradient(
+    to top,
+    rgb(55, 236, 186) 0%,
+    rgb(114, 175, 211) 100%
+  );
+}
+
 h1 {
   color: #fff;
 }
