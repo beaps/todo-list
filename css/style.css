@@ -8,6 +8,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 100vh;
+  overflow: hidden;
 }
 
 section {
@@ -27,12 +28,41 @@ h1 {
   color: #fff;
 }
 
+h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+ul {
+  padding-left: 0;
+  width: 80%;
+  margin: 0 auto;
+  height: 85vh;
+  overflow: auto;
+}
+
+li {
+  list-style: none;
+  background-color: #f2f2f2;
+  padding: 0.5rem;
+  border: 1px solid #e1e1e1;
+  border-radius: 0.3rem;
+  margin-bottom: 0.5rem;
+  /* width: 80%; */
+  position: relative;
+}
+
 .list-item__text {
   display: inline-block;
-  margin: 0 3rem 0 1rem;
-  width: 30%;
+  margin-left: 1rem;
+  width: 83%;
 }
 
 .list-item__text--line-through {
   text-decoration: line-through;
+}
+
+.btn__remove {
+  position: absolute;
+  right: 1.5%;
 }
