@@ -21,6 +21,7 @@ function generateElementsDOM(task) {
   $checkbox.setAttribute("type", "checkbox");
   $checkbox.addEventListener("click", e => {
     $taskText.classList.toggle("list-item__text--line-through");
+    $li.classList.toggle("list-item__color-green");
 
     if (task.done) {
       $checkbox.setAttribute("checked", "checked");
@@ -36,9 +37,11 @@ function generateElementsDOM(task) {
   if (task.done) {
     $checkbox.setAttribute("checked", "checked");
     $taskText.classList.add("list-item__text--line-through");
+    $li.classList.add("list-item__color-green");
   } else {
     $checkbox.removeAttribute("checked");
     $taskText.classList.remove("list-item__text--line-through");
+    $li.classList.remove("list-item__color-green");
   }
 
   $label.appendChild($checkbox);

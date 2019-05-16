@@ -62,7 +62,25 @@ li {
   text-decoration: line-through;
 }
 
+.list-item__color-green {
+  background-color: #c2ffe0;
+  border: 1px solid #77ffbb;
+  color: #32644b;
+}
+
 .btn__remove {
   position: absolute;
   right: 1.5%;
+
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+  top: 6px;
+}
+
+.btn__remove:hover,
+.btn__remove:focus {
+  background-color: rgb(255, 224, 224);
+  color: red;
+  border: 2px solid red;
+  border-radius: 4px;
 }
