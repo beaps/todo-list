@@ -19,6 +19,7 @@ function generateElementsDOM(task) {
 
   // Setup checkbox
   $checkbox.setAttribute("type", "checkbox");
+  $checkbox.classList.add("list-item__checkbox-position");
   $checkbox.addEventListener("click", e => {
     $taskText.classList.toggle("list-item__text--line-through");
     $li.classList.toggle("list-item__color-green");

@@ -60,7 +60,7 @@ li {
 
 .list-item__text {
   display: inline-block;
-  margin-left: 1rem;
+  margin-left: 1.8rem;
   width: 83%;
 }
 
@@ -72,6 +72,11 @@ li {
   background-color: #c2ffe0;
   border: 1px solid #77ffbb;
   color: #32644b;
+}
+
+.list-item__checkbox-position {
+  position: absolute;
+  top: 11px;
 }
 
 .btn__remove {
