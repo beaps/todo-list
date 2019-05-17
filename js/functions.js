@@ -57,6 +57,7 @@ function generateElementsDOM(task) {
   $removeButton.addEventListener("click", e => {
     e.target.parentNode.remove();
     removeItemFromLocalStorage(task);
+    noTasks($list, tasks, $image, $ulElement, $textNoTasks);
   });
   $removeButton.classList.add("btn__remove");
 
@@ -89,4 +90,20 @@ function removeItemFromLocalStorage(task) {
   tasks.splice(index, 1);
 
   saveTasks(tasks);
+}
+
+function noTasks(list, tasks, image, ul, textNoTasks) {
+  if (list.length === 0 && tasks.length === 0) {
+    image.setAttribute("src", "img/img1.png");
+    image.setAttribute("width", "400px");
+    $image.classList.add("img-spaced");
+    image.classList.remove("img-display");
+    ul.classList.add("list-container-display");
+    textNoTasks.classList.add("textNoTasks-align", "textNoTasks-color");
+    textNoTasks.classList.remove("textNoTasks-display");
+  } else {
+    image.classList.add("img-display");
+    ul.classList.remove("list-container-display");
+    textNoTasks.classList.add("textNoTasks-display");
+  }
 }

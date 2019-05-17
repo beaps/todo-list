@@ -150,3 +150,27 @@ li {
     margin-bottom: 2rem;
   }
 }
+
+.img-display {
+  display: none;
+}
+
+.img-spaced {
+  margin: 0 auto;
+}
+
+.list-container-display {
+  display: none;
+}
+
+.textNoTasks-display {
+  display: none;
+}
+
+.textNoTasks-align {
+  text-align: center;
+}
+
+.textNoTasks-color {
+  color: rgb(126, 126, 126);
+}
