@@ -132,3 +132,21 @@ li {
   background-color: rgb(255, 255, 210);
   border-color: yellow;
 }
+
+@media (max-width: 1023px) {
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(100px, 200px) 1fr;
+    overflow: auto;
+  }
+
+  h2 {
+    display: none;
+  }
+
+  header {
+    margin-bottom: 2rem;
+  }
+}
