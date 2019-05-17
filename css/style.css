@@ -174,3 +174,7 @@ li {
 .textNoTasks-color {
   color: rgb(126, 126, 126);
 }
+
+.img-width {
+  width: 70%;
+}

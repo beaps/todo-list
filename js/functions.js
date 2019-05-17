@@ -95,8 +95,7 @@ function removeItemFromLocalStorage(task) {
 function noTasks(list, tasks, image, ul, textNoTasks) {
   if (list.length === 0 && tasks.length === 0) {
     image.setAttribute("src", "img/img1.png");
-    image.setAttribute("width", "400px");
-    $image.classList.add("img-spaced");
+    image.classList.add("img-spaced", "img-width");
     image.classList.remove("img-display");
     ul.classList.add("list-container-display");
     textNoTasks.classList.add("textNoTasks-align", "textNoTasks-color");
