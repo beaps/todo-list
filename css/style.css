@@ -22,10 +22,15 @@ header {
     rgb(55, 236, 186) 0%,
     rgb(114, 175, 211) 100%
   );
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 h1 {
   color: #fff;
+  margin-bottom: 2rem;
+  text-align: center;
 }
 
 h2 {
@@ -83,4 +88,41 @@ li {
   color: red;
   border: 2px solid red;
   border-radius: 4px;
+}
+
+.btn {
+  background: yellow;
+  padding: 0.5rem 0.8rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  margin-left: 1rem;
+  border: 2px solid yellow;
+}
+
+.btn:hover,
+.btn:focus {
+  background: rgb(231, 231, 7);
+}
+
+.btn:active {
+  padding: 0.3rem 0.6rem;
+}
+
+#task {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 2px solid rgb(114, 175, 211);
+  background: #fff;
+  font-size: 1rem;
+}
+
+#task::placeholder {
+  color: rgb(114, 175, 211);
+}
+
+#task:hover,
+#task:focus {
+  background-color: rgb(255, 255, 210);
+  border-color: yellow;
 }
