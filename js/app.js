@@ -1,13 +1,13 @@
 const $form = document.querySelector(".form-task");
-let $task = document.querySelector("#task");
+const $task = document.querySelector("#task");
 const $ulElement = document.querySelector(".list-container");
 const $list = document.getElementsByTagName("li");
 const $section = document.getElementsByTagName("section")[0];
 const $image = document.createElement("img");
-$section.appendChild($image);
 const $textNoTasks = document.createElement("p");
+$section.appendChild($image);
 $section.appendChild($textNoTasks);
-$textNoTasks.textContent = "¡No tienes tareas pendientes! 🤪";
+$textNoTasks.textContent = "No tienes tareas pendientes 🤪";
 
 const tasks = getSavedTasks();
 
